@@ -1,0 +1,101 @@
+/* Interface language. English strings are the keys, so a missing translation
+   falls back to English instead of showing a blank. Place names, room numbers and
+   anything else that comes from the campus file stay as the campus wrote them.
+   Add another language by adding another table next to HI. */
+(function (root) {
+  "use strict";
+  var HI = {
+    "You are free too: {span}": "आप भी खाली हैं: {span}", "Clashes with your class": "आपकी क्लास से टकराता है", "{n} teachers. Each shows the next time you can meet them.": "{n} शिक्षक। हर एक के साथ अगला मिलने का समय दिखता है।",
+    "Free now until {time}": "अभी {time} तक खाली", "Next free: {day}, {span}": "अगला खाली समय: {day}, {span}", "All teachers": "सभी शिक्षक",
+    "Teachers are free between their classes. Find a teacher, then go in their free time. If you have added your own timetable, the times you are both free are marked.": "शिक्षक अपनी क्लास के बीच खाली होते हैं। शिक्षक चुनें और उनके खाली समय में जाएँ। अगर आपने अपना टाइमटेबल जोड़ा है तो जब आप दोनों खाली हों वह समय दिखता है।",
+    "a classroom": "एक कक्षा", "After {subject} in {room}": "{room} में {subject} के बाद", "Next: {subject} in {room}": "अगली क्लास: {room} में {subject}",
+    "When to meet": "मिलने का समय", "No free time on this day.": "इस दिन कोई खाली समय नहीं है।", "{t} free": "{t} खाली",
+    "Meet them at the cabin: {room}.": "उनसे केबिन में मिलें: {room}।", "Cabin not added yet. Look for them near their last or next class.": "केबिन अभी जोड़ा नहीं गया है। उन्हें उनकी पिछली या अगली क्लास के पास ढूंढें।",
+    "Nobody matches. Try a shorter time or another department.": "कोई नहीं मिला। कम समय या दूसरा विभाग आज़माएँ।", "{n} teachers are free, longest free time first.": "{n} शिक्षक खाली हैं, सबसे लंबा खाली समय पहले।",
+    "No more classes today.": "आज और कोई क्लास नहीं है।", "Show more teachers": "और शिक्षक दिखाएँ", "Meet faculty": "शिक्षकों से मिलें",
+    "See which teachers are free, and for how long, so you can meet them between their classes.": "देखें कौन से शिक्षक कितनी देर खाली हैं, ताकि क्लास के बीच उनसे मिल सकें।",
+    "Search a teacher": "शिक्षक खोजें", "All departments": "सभी विभाग", "No cabin set": "केबिन तय नहीं", "Who is free now": "अभी कौन खाली है",
+    "See all {n} teachers in Meet faculty": "शिक्षकों से मिलें में सभी {n} शिक्षक देखें", "At least 10 min": "कम से कम 10 मिनट", "At least 20 min": "कम से कम 20 मिनट",
+    "Explore": "खोजें", "Route": "रास्ता", "Free now": "खाली अभी", "Classes": "क्लास", "Events": "इवेंट", "Saved": "सेव्ड", "Manage": "मैनेज",
+    "Search a room, place or faculty": "रूम, जगह या फैकल्टी खोजें", "Find a place on campus": "कैंपस में कोई भी जगह खोजें",
+    "{n} places across {m} buildings. Search by room number or name, or type a trip.": "{m} बिल्डिंग में {n} जगहें। रूम नंबर या नाम से खोजें, या सीधे लिखें कहाँ से कहाँ जाना है।",
+    "{a} to {b}": "{a} से {b}", "nearest cafe": "सबसे पास कैंटीन", "free rooms": "खाली कमरे",
+    "Free rooms": "खाली कमरे", "Empty right now": "अभी कौन से खाली हैं", "Time to leave": "अब निकलना पड़ेगा", "For your next class": "अगली क्लास के लिए",
+    "Popular places": "मशहूर जगहें", "Faculty": "फैकल्टी", "Faculty cabins": "फैकल्टी केबिन", "Press Enter or tap here": "Enter दबाएँ या यहाँ टैप करें",
+    "1 result for \"{q}\"": "\"{q}\" के लिए 1 नतीजा", "{n} results for \"{q}\"": "\"{q}\" के लिए {n} नतीजे",
+    "Nothing matches. Try a room number like 105 or N201, a word like lab or cafe, or a trip like \"105 to N207\".": "कुछ नहीं मिला। 105 या N201 जैसा रूम नंबर, lab या cafe जैसा शब्द, या \"105 से N207\" जैसा रास्ता लिखें।",
+    "{n} {what}, highlighted on the map": "{n} {what}, नक्शे पर चमकते हुए",
+    "All": "सभी", "In cabin": "केबिन में", "Teaching": "पढ़ा रहे हैं", "Filter faculty": "फैकल्टी फ़िल्टर", "Nobody matches right now.": "अभी कोई नहीं मिला।",
+    "Directions": "रास्ता बताओ", "Start here": "यहाँ से शुरू", "I am here": "मैं यहाँ हूँ", "Save": "सेव करें", "Copy link to this place": "इस जगह का लिंक कॉपी करें",
+    "Close place details": "बंद करें", "You are here": "आप यहाँ हैं", "Out of service": "बंद है", "No. {n}": "नं. {n}", "Open {hours}": "खुला: {hours}", "at {time}": "{time} पर",
+    "Open a floor plan": "फ्लोर प्लान खोलें", "Show on map": "नक्शे पर दिखाओ", "Clear": "हटाएँ",
+    "Timetable": "टाइमटेबल", "Day": "दिन", "Time": "समय", "Nothing is booked here on {day}.": "{day} को यहाँ कोई क्लास नहीं है।", "No timetable has been added for this room.": "इस रूम का टाइमटेबल नहीं जुड़ा है।",
+    "Class": "क्लास", "Add to my classes": "मेरी क्लास में जोड़ें", "Added": "जुड़ गया", "Remove this class slot": "यह स्लॉट हटाएँ", "Added to your classes": "आपकी क्लास में जुड़ गया", "Already in your classes": "पहले से आपकी क्लास में है",
+    "Campus closed": "कैंपस बंद है", "In use until {time}": "{time} तक क्लास चल रही है", "Free for the rest of the day": "पूरे दिन खाली", "Free until {time}": "{time} तक खाली",
+    "Teaching {subject} in {room} until {time}": "{room} में {subject} पढ़ा रहे हैं, {time} तक", "a class": "क्लास", "In cabin until {time}": "{time} तक केबिन में", "In cabin": "केबिन में",
+    "On lunch break until {time}": "{time} तक लंच ब्रेक पर", "On leave today": "आज छुट्टी पर", "Not on campus now. Back {when}": "अभी कैंपस में नहीं हैं। वापसी {when}",
+    "today at {time}": "आज {time} पर", "tomorrow at {time}": "कल {time} पर", "{day} at {time}": "{day} को {time} पर",
+    "Cabin: {room}": "केबिन: {room}", "Take me to their class": "उनकी क्लास तक ले चलो", "Take me to their cabin": "उनके केबिन तक ले चलो", "Directions to cabin": "केबिन का रास्ता",
+    "Classes today": "आज की क्लास", "No classes today. Likely in the cabin.": "आज कोई क्लास नहीं। शायद केबिन में होंगे।",
+    "Directions from {a} to {b}": "{a} से {b} का रास्ता", "Take me to the nearest {what}": "सबसे पास वाला {what} ले चलो", "Show free rooms": "खाली कमरे दिखाओ",
+    "When should I leave for my next class?": "अगली क्लास के लिए कब निकलना है?", "Where is {name} right now?": "{name} अभी कहाँ हैं?", "Directions to {name}": "{name} का रास्ता",
+    "Show {name} on the map": "{name} को नक्शे पर दिखाओ", "No {what} can be reached from your start.": "आपकी शुरुआत से कोई {what} नहीं पहुँचा जा सकता।", "No {what} can be reached from there.": "वहाँ से कोई {what} नहीं पहुँचा जा सकता।",
+    "Choose a start first, or set your location.": "पहले शुरुआत चुनें, या अपनी लोकेशन सेट करें।",
+    "From": "कहाँ से", "To": "कहाँ तक", "Choose a start": "शुरुआत चुनें", "Choose a destination": "मंज़िल चुनें", "Swap start and destination": "शुरुआत और मंज़िल बदलें",
+    "Step-free route (lifts only)": "बिना सीढ़ी का रास्ता (सिर्फ़ लिफ्ट)", "Take me to the nearest": "सबसे पास वाला ले चलो",
+    "Pick a start and a destination. You can also tap any room on the map and choose Directions.": "शुरुआत और मंज़िल चुनें। नक्शे पर किसी भी रूम को टैप करके \"रास्ता बताओ\" भी दबा सकते हैं।",
+    "Pick where you are starting from.": "बताएँ कहाँ से शुरू करना है।", "Pick where you want to go.": "बताएँ कहाँ जाना है।", "Start and destination are the same place.": "शुरुआत और मंज़िल एक ही जगह हैं।",
+    "No route found between these places.": "इन जगहों के बीच रास्ता नहीं मिला।", "Step-free mode needs a working lift on the way.": "बिना सीढ़ी वाले रास्ते के लिए चालू लिफ्ट चाहिए।", "Some stairs or lifts are marked out of service.": "कुछ सीढ़ियाँ या लिफ्ट बंद हैं।",
+    "{d} walking": "{d} पैदल", "1 floor change": "1 मंज़िल बदलनी है", "{n} floor changes": "{n} बार मंज़िल बदलनी है", "step-free": "बिना सीढ़ी",
+    "Copy route link": "रास्ते का लिंक कॉपी करें", "Read aloud": "बोलकर सुनाओ", "Stop reading": "बोलना बंद करें", "Clear route": "रास्ता हटाएँ", "No place matches.": "कोई जगह नहीं मिली।", "My location": "मेरी लोकेशन",
+    "Start at {name}": "{name} से शुरू करें", "Cross the bridge to {b}": "{b} जाने के लिए ब्रिज पार करें", "You stay on the {fl}": "आप {fl} पर ही रहेंगे", "Exit {b}": "{b} से बाहर निकलें", "Continue outside": "बाहर आगे चलते रहें",
+    "Enter {b}": "{b} में जाएँ", "You are on the {fl}": "आप {fl} पर होंगे", "Take {what} up to the {fl}": "{fl} पर जाने के लिए {what} से ऊपर जाएँ", "Take {what} down to the {fl}": "{fl} पर जाने के लिए {what} से नीचे जाएँ",
+    "the lift": "लिफ्ट", "the stairs": "सीढ़ियाँ", "1 floor": "1 मंज़िल", "{n} floors": "{n} मंज़िलें", "Walk straight across": "सीधे सामने चलें", "Walk {d} along the walkway": "रास्ते पर {d} चलें", "Walk {d} along the corridor": "गलियारे में {d} चलें",
+    "Leave {name} and turn {dir}": "{name} से निकलकर {dir} मुड़ें", "Turn left": "बाएँ मुड़ें", "Turn right": "दाएँ मुड़ें", "Turn around": "पीछे मुड़ें", "left": "बाएँ", "right": "दाएँ", "around": "पीछे",
+    "Arrive at {name}": "{name} पहुँच गए", "It is on your {side}": "यह आपके {side} तरफ़ है",
+    "When": "कब", "Now": "अभी", "Pick a time": "समय चुनें", "Free for at least": "कम से कम इतना खाली", "Any time left": "कितना भी समय", "At least 30 min": "कम से कम 30 मिनट", "At least 1 hour": "कम से कम 1 घंटा", "At least 2 hours": "कम से कम 2 घंटे",
+    "Building": "बिल्डिंग", "All buildings": "सभी बिल्डिंग", "Rooms with nothing booked, for studying or a quick meeting. Based on the weekly timetable.": "पढ़ाई या छोटी मीटिंग के लिए बिना बुकिंग वाले रूम। साप्ताहिक टाइमटेबल के आधार पर।",
+    "Sorted by walking time from {name}.": "{name} से पैदल समय के हिसाब से क्रम में।", "Sorted by walking time from {name}. Set your location for exact times.": "{name} से पैदल समय के हिसाब से क्रम में। सही समय के लिए अपनी लोकेशन सेट करें।",
+    "The campus is closed at this time. It opens {when}.": "इस समय कैंपस बंद है। खुलेगा {when}।", "No free room fits. Try a shorter time or another building.": "कोई खाली रूम नहीं मिला। कम समय या दूसरी बिल्डिंग आज़माएँ।",
+    "{n} free rooms, nearest first.": "{n} खाली रूम, सबसे पास वाले पहले।", "{t} walk": "{t} पैदल", "Show more rooms": "और रूम दिखाओ", "This campus has no timetable yet. An admin can import one from the Manage tab.": "इस कैंपस का टाइमटेबल अभी नहीं है। एडमिन मैनेज टैब से जोड़ सकता है।",
+    "My classes": "मेरी क्लास", "Settings": "सेटिंग", "Walking time is counted from {name}.": "पैदल समय {name} से गिना गया है।", "Walking time is counted from {name}. Set your location for a better estimate.": "पैदल समय {name} से गिना गया है। बेहतर अंदाज़े के लिए अपनी लोकेशन सेट करें।",
+    "Minutes to spare": "बचाने के लिए मिनट", "Reminders appear while this page is open. Install the app for the best experience.": "रिमाइंडर तभी दिखते हैं जब यह पेज खुला हो। बेहतर अनुभव के लिए ऐप इंस्टॉल करें।",
+    "Add your timetable once. This then tells you when to leave for every class, counting stairs, lifts and bridges on the way.": "अपना टाइमटेबल एक बार जोड़ें। फिर हर क्लास के लिए बताएगा कब निकलना है, सीढ़ी, लिफ्ट और ब्रिज का समय जोड़कर।",
+    "Leave at {time}": "{time} पर निकलें", "{day}, leave at {time}": "{day}, {time} पर निकलें", "in {t}": "{t} में", "Leave now": "अभी निकलें", "Class starts in {t}": "क्लास {t} में शुरू होगी", "You will be about {t} late": "आप करीब {t} लेट होंगे",
+    "About {t} late": "करीब {t} लेट", "Leave as soon as the last class ends": "पिछली क्लास खत्म होते ही निकलें", "Class in progress": "क्लास चल रही है", "Started at {time}": "{time} पर शुरू हुई", "In progress": "चल रही है",
+    "No route to the room": "रूम तक रास्ता नहीं मिला", "Check for closed stairs or lifts.": "बंद सीढ़ी या लिफ्ट देखें।", "No route": "रास्ता नहीं", "Take me there": "वहाँ ले चलो", "Remind me": "याद दिलाओ", "Reminder on": "रिमाइंडर चालू",
+    "Reminder off": "रिमाइंडर बंद", "We will remind you when it is time to leave, while this page is open.": "जब निकलने का समय होगा हम याद दिलाएँगे, बशर्ते यह पेज खुला हो।", "Time to leave for {subject} in {room}.": "{room} में {subject} के लिए निकलने का समय हो गया।",
+    "Plan for {day}": "{day} का प्लान", "from the previous class": "पिछली क्लास से", "{h} h {m} min": "{h} घंटे {m} मिनट", "{n} min": "{n} मिनट", "under 1 min": "1 मिनट से कम", "{n} m": "{n} मी.",
+    "Upload my weekly timetable": "मेरा साप्ताहिक टाइमटेबल अपलोड करें", "Upload your class timetable as a CSV or text file, or paste it. Days, times and rooms fill in by themselves. Works with the university grid layout (MON to Sa, one column per period, rooms like RN 001).": "अपना क्लास टाइमटेबल CSV या टेक्स्ट फ़ाइल में अपलोड करें, या पेस्ट करें। दिन, समय और रूम अपने आप भर जाएँगे। यूनिवर्सिटी वाले ग्रिड फ़ॉर्मेट (MON से Sa, हर पीरियड का कॉलम, रूम जैसे RN 001) के साथ चलता है।",
+    "Choose file": "फ़ाइल चुनें", "Copy a sample": "सैंपल कॉपी करें", "Or paste the timetable here": "या टाइमटेबल यहाँ पेस्ट करें", "Paste timetable": "टाइमटेबल पेस्ट करें", "Replace my current classes": "मेरी मौजूदा क्लास बदल दें", "Import timetable": "टाइमटेबल इम्पोर्ट करें",
+    "Photos and PDFs cannot be read yet. Export the timetable to CSV or Excel (Save as CSV) first.": "फ़ोटो और PDF अभी पढ़े नहीं जा सकते। पहले टाइमटेबल को CSV या Excel (Save as CSV) में निकाल लें।",
+    "Sample copied. Paste it into the box below.": "सैंपल कॉपी हो गया। इसे नीचे के बॉक्स में पेस्ट करें।", "No classes were found.": "कोई क्लास नहीं मिली।", "{n} classes imported. Days, times and rooms are filled in.": "{n} क्लास जुड़ गईं। दिन, समय और रूम भर गए हैं।",
+    "{n} lines skipped.": "{n} लाइनें छोड़ी गईं।", "Timetable imported": "टाइमटेबल इम्पोर्ट हो गया", "Sign in to keep your timetable on every device.": "अपना टाइमटेबल हर डिवाइस पर रखने के लिए साइन इन करें।", "Sign in": "साइन इन",
+    "Add a class": "क्लास जोड़ें", "Subject, for example Operating Systems": "विषय, जैसे Operating Systems", "Subject": "विषय", "Room": "रूम", "Start time": "शुरू होने का समय", "End time": "खत्म होने का समय", "Length": "अवधि",
+    "50 min": "50 मिनट", "1 hour": "1 घंटा", "1.5 hours": "1.5 घंटे", "2 hours": "2 घंटे", "3 hours": "3 घंटे", "Add class": "क्लास जोड़ें", "today": "आज", "Remove {name}": "{name} हटाएँ", "Class added": "क्लास जुड़ गई",
+    "Events on campus": "कैंपस के इवेंट", "No events are listed for this campus yet.": "इस कैंपस के कोई इवेंट अभी नहीं हैं।", "Today": "आज", "Tomorrow": "कल",
+    "Not set. Open any place and press I am here. On campus, scanning the QR code at a door does this for you.": "सेट नहीं है। कोई जगह खोलकर \"मैं यहाँ हूँ\" दबाएँ। कैंपस में दरवाज़े का QR स्कैन करने से यह अपने आप हो जाता है।",
+    "Favourites": "पसंदीदा", "Press Save on a place to keep it here.": "किसी जगह पर \"सेव करें\" दबाएँ, वह यहाँ रहेगी।", "Recently viewed": "हाल में देखे", "Clear recent places": "हाल की जगहें हटाएँ", "Places you open show up here.": "जो जगहें आप खोलेंगे वे यहाँ दिखेंगी।",
+    "You are at {name}": "आप {name} में हैं", "Offline": "ऑफ़लाइन", "Previous part": "पिछला हिस्सा", "Part {i} of {n}": "हिस्सा {i} / {n}", "Arrived": "पहुँच गए", "Next": "आगे", "Campus overview": "पूरा कैंपस", "Floor": "मंज़िल",
+    "Pick a place and press I am here to set your location.": "कोई जगह चुनकर \"मैं यहाँ हूँ\" दबाएँ, ताकि लोकेशन सेट हो।", "Checked in at {name}": "{name} पर चेक-इन हो गया",
+    "Weekly room timetable": "रूम का साप्ताहिक टाइमटेबल", "{n} class slots in {m} rooms. They power Free rooms and the faculty status.": "{m} रूम में {n} क्लास स्लॉट। इन्हीं से खाली रूम और फैकल्टी का स्टेटस चलता है।", "Import CSV": "CSV इम्पोर्ट", "Copy as CSV": "CSV में कॉपी करें", "Back to campus file": "कैंपस फ़ाइल पर वापस",
+    "Columns: room, days, start, end, subject, faculty. For example: N207, Mon Wed Fri, 09:00, 09:55, Algorithms, Dr. A. Sharma": "कॉलम: room, days, start, end, subject, faculty। उदाहरण: N207, Mon Wed Fri, 09:00, 09:55, Algorithms, Dr. A. Sharma",
+    "Imported {n} class slots.": "{n} क्लास स्लॉट जुड़े।", "Nothing was imported.": "कुछ इम्पोर्ट नहीं हुआ।", "No teacher listed": "टीचर का नाम नहीं", "Add class slot": "क्लास स्लॉट जोड़ें", "Pick at least one day, and an end time after the start.": "कम से कम एक दिन चुनें, और खत्म होने का समय शुरू के बाद का हो।",
+    "Class slot added": "क्लास स्लॉट जुड़ गया", "Class slot removed": "क्लास स्लॉट हट गया", "Timetable copied as CSV": "टाइमटेबल CSV में कॉपी हो गया", "Timetable reset": "टाइमटेबल रीसेट हो गया", "Marked on leave today": "आज छुट्टी पर मार्क किया", "Back from leave": "छुट्टी से वापस",
+    "Listening...": "सुन रहा हूँ...", "Allow microphone access to search by voice.": "आवाज़ से खोजने के लिए माइक की अनुमति दें।", "I did not hear anything. Try again.": "कुछ सुनाई नहीं दिया। फिर कोशिश करें।", "Voice search is not available right now.": "आवाज़ से खोज अभी उपलब्ध नहीं है।",
+    "Classroom": "क्लासरूम", "Classrooms": "क्लासरूम", "Lab": "लैब", "Labs": "लैब", "Library": "लाइब्रेरी", "Cafe": "कैफ़े", "Cafes": "कैफ़े", "Medical": "मेडिकल", "Common room": "कॉमन रूम", "Common rooms": "कॉमन रूम", "Auditorium": "ऑडिटोरियम", "Waiting area": "वेटिंग एरिया", "Waiting areas": "वेटिंग एरिया",
+    "Office": "ऑफ़िस", "Offices": "ऑफ़िस", "Washroom": "वॉशरूम", "Washrooms": "वॉशरूम", "Stairs": "सीढ़ियाँ", "Lift": "लिफ्ट", "Lifts": "लिफ्ट", "Entrance": "प्रवेश", "Entrances": "प्रवेश", "Building": "बिल्डिंग", "Buildings": "बिल्डिंग", "Sports": "खेल", "Parking": "पार्किंग", "Gate": "गेट", "Gates": "गेट",
+    "Bridge": "ब्रिज", "Bridges": "ब्रिज", "Hostel": "हॉस्टल", "Hostels": "हॉस्टल", "Campus": "कैंपस", "Campus grounds": "कैंपस परिसर",
+    "Sunday": "रविवार", "Monday": "सोमवार", "Tuesday": "मंगलवार", "Wednesday": "बुधवार", "Thursday": "गुरुवार", "Friday": "शुक्रवार", "Saturday": "शनिवार", "Sun": "रवि", "Mon": "सोम", "Tue": "मंगल", "Wed": "बुध", "Thu": "गुरु", "Fri": "शुक्र", "Sat": "शनि",
+    "Ground Floor": "भूतल", "First Floor": "पहली मंज़िल", "Second Floor": "दूसरी मंज़िल", "Third Floor": "तीसरी मंज़िल", "Fourth Floor": "चौथी मंज़िल", "ground floor": "भूतल", "first floor": "पहली मंज़िल", "second floor": "दूसरी मंज़िल", "third floor": "तीसरी मंज़िल", "fourth floor": "चौथी मंज़िल"
+  };
+  var TABLES = { hi: HI }, lang = "en";
+  function tr(key, vars) {
+    var s = (lang !== "en" && TABLES[lang] && TABLES[lang][key]) || key;
+    return vars ? s.replace(/\{(\w+)\}/g, function (m, k) { return vars[k] != null ? vars[k] : m; }) : s;
+  }
+  function setLang(l) { lang = TABLES[l] ? l : "en"; }
+  function getLang() { return lang; }
+  function locale() { return lang === "hi" ? "hi-IN" : undefined; }
+  root.NavI18n = { tr: tr, setLang: setLang, getLang: getLang, locale: locale, tables: TABLES };
+})(typeof window !== "undefined" ? window : globalThis);

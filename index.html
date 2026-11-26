@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NCU Navigator</title>
+<meta name="description" content="Indoor and outdoor campus navigation: search any room, get step-by-step directions across floors and buildings.">
+<meta name="theme-color" content="#7A2E12">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="login" id="login" aria-labelledby="lg-title">
+  <section class="login-brand">
+    <div class="login-mark" aria-hidden="true"><svg viewBox="0 0 48 48" width="34" height="34"><path d="M24 6 36 36 24 29 12 36z" fill="currentColor"/></svg></div>
+    <p class="login-uni">The NorthCap University</p>
+    <h1 class="login-name">NCU Navigator</h1>
+    <p class="login-line">Find any room, teacher or route on campus, floor by floor.</p>
+    <ul class="login-points">
+      <li>Step-by-step directions across both buildings</li>
+      <li>See which teachers are free, and when</li>
+      <li>Check empty rooms and your next class</li>
+    </ul>
+  </section>
+  <section class="login-card">
+    <form id="login-form" novalidate autocomplete="on">
+      <h2 id="lg-title">Log in</h2>
+      <p class="login-sub">Use your college email.</p>
+      <label for="lg-email">Email <span class="req" aria-hidden="true">*</span></label>
+      <input id="lg-email" name="email" type="email" inputmode="email" autocomplete="username" autocapitalize="off" spellcheck="false" placeholder="23csu001@ncuindia.edu" required>
+      <label for="lg-pass">Password <span class="req" aria-hidden="true">*</span></label>
+      <div class="pw"><input id="lg-pass" name="password" type="password" autocomplete="current-password" required><button type="button" id="lg-show" aria-pressed="false">Show</button></div>
+      <p class="lg-err" id="lg-err" role="alert" hidden></p>
+      <button class="lg-go" type="submit">Log in now</button>
+    </form>
+  </section>
+</main>
+<script src="js/auth.js"></script>
+<div class="app" id="app">
+
+  <div class="map" id="map" aria-label="Campus map">
+    <svg id="svg" role="img" aria-label="Interactive campus map"><g id="world"></g></svg>
+  </div>
+
+  <div class="where" id="where" aria-live="polite"></div>
+
+  <div class="dock" id="dock" aria-label="Map controls">
+    <div class="dock-group" id="layers" role="group" aria-label="Buildings and floors"></div>
+    <div class="dock-group" role="group" aria-label="Zoom" style="flex:none">
+      <button class="dock-btn" id="zoom-in" type="button" aria-label="Zoom in"></button>
+      <button class="dock-btn" id="zoom-out" type="button" aria-label="Zoom out"></button>
+      <button class="dock-btn" id="zoom-fit" type="button" aria-label="Fit map to screen"></button>
+      <button class="dock-btn" id="go-loc" type="button" aria-label="Show my location"></button>
+    </div>
+  </div>
+
+  <div class="legbar" id="legbar" hidden></div>
+
+  <aside class="panel" id="panel" aria-label="Navigator">
+    <button class="grip" id="grip" type="button" aria-label="Expand or collapse panel"><span></span></button>
+    <header class="sign">
+      <div class="sign-arrow" aria-hidden="true"></div>
+      <div class="sign-text">
+        <h1 id="brand">Navigator</h1>
+        <p id="campus-name"></p>
+      </div>
+      <button class="icon-btn on-sign" id="install" type="button" hidden data-tr-label="Install app" aria-label="Install app">&#8681;</button>
+      <button class="icon-btn on-sign txt" id="lang" type="button" aria-label="Language">हिं</button>
+      <button class="icon-btn on-sign" id="account-btn" type="button" aria-label="Account"></button>
+      <button class="icon-btn on-sign" id="theme" type="button" aria-label="Switch light or dark theme"></button>
+    </header>
+
+    <div class="searchbar">
+      <label class="search" for="q">
+        <span class="search-ic" id="search-ic" aria-hidden="true"></span>
+        <input id="q" type="search" placeholder="Search a room, place or faculty" data-tr-ph="Search a room, place or faculty" autocomplete="off" spellcheck="false">
+        <button class="mic" id="mic" type="button" hidden data-tr-label="Search by voice" aria-label="Search by voice"></button>
+      </label>
+    </div>
+
+    <nav class="tabs" id="tabs" aria-label="Sections"></nav>
+    <div class="body" id="body"></div>
+  </aside>
+
+  <dialog class="modal" id="account" aria-labelledby="account-title"></dialog>
+  <dialog class="modal wide" id="sheet" aria-labelledby="sheet-title"></dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</div>
+
+<script src="data/ncu.js"></script>
+<script src="data/greenfield.js"></script>
+<script src="js/qr.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/core.js"></script>
+<script src="js/plan.js"></script>
+<script src="js/nlu.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

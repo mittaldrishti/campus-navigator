@@ -1,0 +1,11 @@
+{
+  "name": "ncu-navigator",
+  "version": "1.0.0",
+  "description": "Campus navigation website with a zero-dependency Node backend",
+  "private": true,
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "node tools/test_core.js && node tools/test_i18n.js && node tools/test_server.js"
+  },
+  "engines": { "node": ">=18" }
+}

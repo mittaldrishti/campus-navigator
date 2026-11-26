@@ -1,0 +1,4 @@
+server/db.json
+server/db.json.tmp
+node_modules/
+__pycache__/
